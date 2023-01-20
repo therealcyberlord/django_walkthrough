@@ -23,6 +23,6 @@ def summarize(request):
     else:
 
         latest = Text.objects.latest("time_sent")
-        summary = summarize(latest)
+        summary = summarize(latest.text)
 
         return summary
