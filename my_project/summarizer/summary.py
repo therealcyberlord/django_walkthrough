@@ -1,8 +1,12 @@
 # import library
 import openai
+import os
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv())
 
 # configure openai to your account 
-openai.api_key = None
+openai.api_key = os.environ.get("api_key")
 
 def summarize(text):
 	
@@ -12,7 +16,7 @@ def summarize(text):
 	
 	# ping model and generate a response 
 	response = openai.Completion.create(
-			engine = "text-davinvi-003",
+			engine = "text-davinci-003",
 			prompt = prompt
 	)
 	
