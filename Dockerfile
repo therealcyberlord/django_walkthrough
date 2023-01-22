@@ -3,7 +3,7 @@ FROM python:3.8.13-bullseye
 ARG secret_key
 ARG api_key
 
-WORKDIR /my_project
+WORKDIR /my_project/
 
 COPY . .
 
