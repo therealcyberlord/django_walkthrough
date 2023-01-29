@@ -11,13 +11,13 @@ openai.api_key = os.environ.get("api_key")
 def summarize(text):
 	
 	# create prompt
-	prompt = "Write a concise summary of the following content: \n"
+	prompt = "Write a concise summary of the following content. and aim to capture the main ideas of the exercept in a comprehensive and brief manner: \n\n\n"
 	prompt += text
 	
 	# ping model and generate a response 
 	response = openai.Completion.create(
-			engine = "text-davinci-003",
-			prompt = prompt
+		engine = "text-davinci-003",
+		prompt = prompt
 	)
 	
 	# clean up response to just the actual String value and return 

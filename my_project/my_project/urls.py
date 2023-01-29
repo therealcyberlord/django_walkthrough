@@ -20,5 +20,5 @@ from my_app.views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("summary/", summarizeView)
+    path("summary/", summarize_view)
 ]

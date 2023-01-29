@@ -8,8 +8,8 @@ from .models import Text
 from summarizer.summary import *
 
 # Create your views here.
-@api_view(["POST", "GET"])
-def summarizeView(request):
+@api_view(["POST"])
+def summarize_view(request):
 
     if request.method == "POST":
 
@@ -18,7 +18,9 @@ def summarizeView(request):
         new_addition = Text(text = text)
         new_addition.save()
 
-        return Response(status = 200)
+        summary = summarize(new_addition.text)
+
+        return Response(summary, status = 200)
 
 #     else:
 #         try:
