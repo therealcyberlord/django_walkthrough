@@ -20,11 +20,11 @@ def summarizeView(request):
 
         return Response(status = 200)
 
-    else:
-        try:
-            latest = Text.objects.latest("time_sent")
-            summary = summarize(latest.text)
+#     else:
+#         try:
+#             latest = Text.objects.latest("time_sent")
+#             summary = summarize(latest.text)
 
-            return Response(summary)
-        except:
-            return Response("No text added!")
+#             return Response(summary)
+#         except:
+#             return Response("No text added!")
