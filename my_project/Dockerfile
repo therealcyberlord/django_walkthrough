@@ -10,11 +10,12 @@ ARG PGPASSWORD
 ARG PGPORT
 ARG PGUSER
 
+ENV PYTHONBUFFERED=1
+
 WORKDIR /my_project/
 
 COPY . .
 
-RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 EXPOSE 8000
