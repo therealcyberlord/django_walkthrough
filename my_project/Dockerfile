@@ -18,10 +18,9 @@ COPY . .
 
 RUN pip install --upgrade pip 
 RUN pip install -r requirements.txt
+RUN python manage.py makemigrations my_app
+RUN python manage.py migrate 
 
 EXPOSE 8000
 
-# Run migrations
-CMD ["python" "manage.py" "makemigrations"]
-CMD ["python" "manage.py" "migrate"]
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
