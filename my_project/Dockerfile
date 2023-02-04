@@ -12,7 +12,7 @@ ARG PGUSER
 
 ENV PYTHONBUFFERED=1
 
-WORKDIR /my_project/
+WORKDIR /my_project
 
 COPY . .
 
