@@ -1,8 +1,7 @@
-FROM python:3.8.13-bullseye
+FROM python:3.9
 
 ARG secret_key
 ARG api_key
-ARG PORT
 ARG DATABASE_URL
 ARG PGDATABASE
 ARG PGHOST
