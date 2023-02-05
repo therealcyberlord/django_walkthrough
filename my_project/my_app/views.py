@@ -13,7 +13,7 @@ def summarize_view(request):
 
     if request.method == "POST":
 
-        text = request.data["text"]
+        text = request.data.get("text", None)
 
         new_addition = Text(text = text)
         new_addition.save()
